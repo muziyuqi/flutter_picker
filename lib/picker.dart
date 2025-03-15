@@ -426,7 +426,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
                   bottom: BorderSide(color: theme!.dividerColor, width: 0.5),
                 ),
                 color: picker.headerColor == null
-                    ? (theme!.bottomAppBarColor)
+                    ? (theme!.colorScheme.surface)
                     : picker.headerColor,
               ),
         ));
@@ -479,7 +479,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
       child: picker.title == null
           ? SizedBox()
           : DefaultTextStyle(
-              style: theme!.textTheme.headline6?.copyWith(
+              style: theme!.textTheme.titleLarge?.copyWith(
                     fontSize: Picker.DefaultTextSize,
                   ) ??
                   TextStyle(fontSize: Picker.DefaultTextSize),
@@ -726,7 +726,7 @@ abstract class PickerAdapter<T> {
                     fontFamily: picker?.state?.context != null
                         ? Theme.of(picker!.state!.context)
                             .textTheme
-                            .headline6!
+                            .titleLarge!
                             .fontFamily
                         : "",
                     fontSize: Picker.DefaultTextSize),
